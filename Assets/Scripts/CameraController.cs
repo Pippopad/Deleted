@@ -2,7 +2,7 @@
 
 public class CameraController : MonoBehaviour
 {
-    private Camera thisCamera;
+    private Camera mainCamera;
     private float halfWidth;
     private float halfHeight;
 
@@ -25,8 +25,8 @@ public class CameraController : MonoBehaviour
         minBounds = bounds.bounds.min;
         maxBounds = bounds.bounds.max;
 
-        thisCamera = GetComponent<Camera>();
-        halfHeight = thisCamera.orthographicSize;
+        mainCamera = GetComponent<Camera>();
+        halfHeight = mainCamera.orthographicSize;
         halfWidth = halfHeight * Screen.width / Screen.height;
 
         if (!exists)

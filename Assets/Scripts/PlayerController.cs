@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     private float moveSpeed = 5;
     private bool moving;
-    private Vector2 lastMove;
+    public Vector2 lastMove;
 
     private static bool exists;
 
