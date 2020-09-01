@@ -9,10 +9,21 @@ public class PlayerController : MonoBehaviour
     private bool moving;
     private Vector2 lastMove;
 
+    private static bool exists;
+
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+
+        if(!exists)
+        {
+            exists = true;
+            DontDestroyOnLoad(transform.gameObject);
+        } else
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Update()
