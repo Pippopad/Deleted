@@ -4,7 +4,7 @@ public class CameraController : MonoBehaviour
 {
     private GameObject player;
     private Vector3 playerPosition;
-    private float moveSpeed = 2;
+    private float moveSpeed = 1.5f;
 
     void Start()
     {
