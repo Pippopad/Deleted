@@ -13,6 +13,7 @@ public class EnemyController : MonoBehaviour
     private float timeBetweenMoveCounter;
     private float timeToMove = 2;
     private float timeToMoveCounter;
+
     private Vector3 moveDirection;
     private Vector2 lastMove;
 
