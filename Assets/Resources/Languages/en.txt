@@ -1,2 +1,2 @@
-Gino=Hello Guys!
-okky=OKKYYYYY
+# Boss Name
+mr.lemon=Mr. Lemon
