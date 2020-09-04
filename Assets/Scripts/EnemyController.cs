@@ -24,8 +24,8 @@ public class EnemyController : MonoBehaviour
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
-        timeBetweenMoveCounter= timeBetweenMove;
-        timeToMoveCounter = timeToMove;
+        timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
+        timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
     }
 
     void Update()
@@ -38,7 +38,7 @@ public class EnemyController : MonoBehaviour
             if(timeToMoveCounter < 0.0f)
             {
                 moving = false;
-                timeBetweenMoveCounter = timeBetweenMove;
+                timeBetweenMoveCounter = Random.Range(timeBetweenMove * 0.75f, timeBetweenMove * 1.25f);
             }
         } else
         {
@@ -48,7 +48,7 @@ public class EnemyController : MonoBehaviour
             if(timeBetweenMoveCounter < 0.0f)
             {
                 moving = true;
-                timeToMoveCounter = timeToMove;
+                timeToMoveCounter = Random.Range(timeToMove * 0.75f, timeToMove * 1.25f);
 
                 moveDirection = new Vector3(Random.Range(-1.0f, 1.0f) * moveSpeed, Random.Range(-1.0f, 1.0f) * moveSpeed, 0.0f);
                 lastMove = new Vector2(moveDirection.x, moveDirection.y);
@@ -60,5 +60,13 @@ public class EnemyController : MonoBehaviour
         animator.SetFloat("LastX", lastMove.x);
         animator.SetFloat("LastY", lastMove.y);
         animator.SetBool("Moving", moving);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            // Load Attack Scene
+        }
     }
 }
